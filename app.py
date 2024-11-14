@@ -10,14 +10,12 @@ Original file is located at
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
 
-pip install streamlit
 
 import streamlit as st
 from PIL import Image
 import numpy as np
 import tensorflow as tf
 
-! pip install ultralytics
 
 from ultralytics import YOLO
 
@@ -25,7 +23,6 @@ from ultralytics import YOLO
 st.title("Waste Segregation Web")
 st.write("Upload an image to get predictions.")
 
-!pip install gdown
 
 !gdown --id 1OsAa-MryW-4lNvzweL2xxw2qjn4yyUk4
 
