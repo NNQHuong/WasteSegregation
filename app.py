@@ -21,14 +21,15 @@ import tensorflow as tf
 
 from ultralytics import YOLO
 
+
+st.title("Waste Segregation Web")
+st.write("Upload an image to get predictions.")
+
 !pip install gdown
 
 !gdown --id 1OsAa-MryW-4lNvzweL2xxw2qjn4yyUk4
 
 model = YOLO("/content/best.pt")
-
-st.title("Waste Segregation Web")
-st.write("Upload an image to get predictions.")
 
 file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg", "webp"])
 
@@ -46,8 +47,5 @@ if file is not None:
     predictions = model.predict(img_array)
     st.write(predictions)  # Display predictions
 
-!npm install -g localtunnel
-
-!streamlit run app.py &>./logs.txt &
 
 !streamlit run app.py
