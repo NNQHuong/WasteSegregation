@@ -24,8 +24,6 @@ st.title("Waste Segregation Web")
 st.write("Upload an image to get predictions.")
 
 
-!gdown --id 1OsAa-MryW-4lNvzweL2xxw2qjn4yyUk4
-
 model = YOLO("/content/best.pt")
 
 file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg", "webp"])
