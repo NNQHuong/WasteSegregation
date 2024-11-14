@@ -24,7 +24,10 @@ st.title("Waste Segregation Web")
 st.write("Upload an image to get predictions.")
 
 
-model = YOLO("/content/best.pt")
+url = "https://drive.google.com/file/d/1CEo6TubH6d4J0DqmrZxAxqyq3tfDLJLV/view?usp=sharing"
+url = "https://drive.google.com/uc?id=" +url.split('/')[:2]
+
+model = YOLO(url)
 
 file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg", "webp"])
 
@@ -43,4 +46,4 @@ if file is not None:
     st.write(predictions)  # Display predictions
 
 
-!streamlit run app.py
+streamlit run app.py
