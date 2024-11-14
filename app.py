@@ -10,8 +10,6 @@ Original file is located at
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
 
-pip install tensorflow
-
 import streamlit as st
 from PIL import Image
 import numpy as np
