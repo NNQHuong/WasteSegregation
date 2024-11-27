@@ -1,6 +1,6 @@
 import streamlit as st
 from ultralytics import solutions 
-solutions.inference(model="C:\Users\QUYNH HUONG\Downloads\best.pt")
+solutions.inference(model=r"C:\Users\QUYNH HUONG\Downloads\best.pt")
 from ultralytics import YOLO
 from PIL import Image
 from io import BytesIO
@@ -64,13 +64,13 @@ def main():
     st.markdown('---')
     st.subheader('About Us')
     st.write('This project aims to classify and segregate waste images using the YOLO11n-cls model.')
-    st.image("C:\Users\QUYNH HUONG\Documents\STUDY\PTDL\authorproject.jpg",
+    st.image(r"C:\Users\QUYNH HUONG\Documents\STUDY\PTDL\authorproject.jpg",
              caption = 'Honorable mention :3', use_container_width=True)
     st.write("""**YOLO11n-cls** is a state-of-the-art model designed for waste image classification.
     It utilizes deep learning techniques to accurately classify various types of waste,
     helping in effective waste management and segregation.
     """)
-    st.image("C:\Users\QUYNH HUONG\Documents\STUDY\PTDL\modelcomparison.png", 
+    st.image(r"C:\Users\QUYNH HUONG\Documents\STUDY\PTDL\modelcomparison.png", 
              caption="Comparison between YOLO11n-cls and EfficientNet_B7", use_container_width=True)
 
 if __name__ == "__main__":
