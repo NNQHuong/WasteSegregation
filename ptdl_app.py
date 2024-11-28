@@ -1,6 +1,4 @@
 import streamlit as st
-from ultralytics import solutions 
-solutions.inference(model=r"C:\Users\QUYNH HUONG\Downloads\best.pt")
 from ultralytics import YOLO
 from PIL import Image
 from io import BytesIO
@@ -8,6 +6,9 @@ import cv2
 import numpy as np 
 import os
 import requests
+
+model_link = r"C:\Users\QUYNH HUONG\Downloads\best.pt"
+model = YOLO(model_link)
 
 def download_image(url):
     try:
@@ -19,13 +20,8 @@ def download_image(url):
         st.error(f'Error downloading image: {e}')
     return None
 
-def preprocess_image(image):
-    image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
-    image = cv2.resize(image, (640,640))
-    return image
-
 def classify_image(image):
-    results = solutions.inference()
+    results = model(image)
     if results is None:
         return "No classification made."
     labels = results[0].names
@@ -53,8 +49,7 @@ def main():
     if 'image' in locals() and st.button("classify_image"):
         if image is not None:
             try:
-                preprocessed_image = preprocess_image(image)
-                label_text = classify_image(preprocessed_image)
+                label_text = classify_image(image)
                 st.success(label_text)
             except Exception as e:
                 st.error(f"Error classifying image: {e}")
@@ -75,3 +70,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
