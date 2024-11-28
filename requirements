@@ -1,5 +1,0 @@
-pip install ultralytics
-pip install streamlit
-pip install tensorflow
-pip install PIL
-pip install numpy
