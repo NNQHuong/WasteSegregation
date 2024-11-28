@@ -37,6 +37,7 @@ for file_id, destination in zip(file_ids, destination_paths):
         st.error(f"Failed to download {destination}.")
 
 if os.path.exists("best.pt"):
+    model=YOLO("yolo11n.pt") 
     model=YOLO("best.pt")
     if model is not None:
         st.success("Model loaded successfully.")
@@ -55,7 +56,7 @@ def download_image(url):
 
 
 def classify_image(image):
-    results = model(image)
+    results = model.predict(image)
     if results is None:
         return "No classification made."
     labels = results[0].names
