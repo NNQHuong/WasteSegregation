@@ -3,7 +3,6 @@ import cv2
 import numpy as np
 import os
 from ultralytics import YOLO
-from ultralytics import solutions
 from PIL import Image
 import requests
 from io import BytesIO
