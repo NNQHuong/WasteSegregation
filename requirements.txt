@@ -1,4 +1,0 @@
-requests
-streamlit
-opencv-python 
-ultralytics
